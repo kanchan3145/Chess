@@ -2,19 +2,20 @@ package piece;
 
 import main.GamePanel;
 
-public class Queen extends Piece{
+import java.awt.image.BufferedImage;
 
-    public Queen(int color, int col, int row){
+public class King extends Piece {
+
+    public King(int color, int col, int row){
         super(color, col, row);
 
         if (color == GamePanel.WHITE){
-            image = getImage("/piece/e-queen");
+            image = getImage("/piece/w-king");
         }
         else{
-            image = getImage("/piece/b-queen");
+            image = getImage("/piece/b-king");
         }
     }
-}
 
 
 
