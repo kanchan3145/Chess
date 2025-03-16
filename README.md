@@ -1,24 +1,41 @@
 package main;
 
-import javax.swing.JFrame;
+import java.awt.*;
 
-public class Main {
+public class Board {
 
-    public static void main(String[] args){
+    final int MAX_COL = 8;
+    final int MAX_ROW = 8;
+    public static final int SQUARE_SIZE = 100;
+    public static final int HALF_SQUARE_SIZE = SQUARE_SIZE/2;
 
-        JFrame window  = new JFrame("Simple Chess");
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
+    public void draw(Graphics2D g2){
 
-        // ADD GamePanel TO THE WINDOW
-        GamePanel gp = new GamePanel();
-        window.add(gp);
-        window.pack();
+        int c = 0;
 
-        window.setLocationRelativeTo(null);
-        window.setVisible(true);
+        for(int row = 0; row < MAX_ROW; row++){
 
-        gp.launchGame();
+            for (int col = 0; col < MAX_COL; col++){
 
+                if (c==0){
+                    g2.setColor(new Color(210,165,125));
+                    c = 1;
+                }
+                else{
+                    g2.setColor(new Color(175,115,70));
+                    c=0;
+                }
+
+                g2.fillRect(col*SQUARE_SIZE, row*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
+            }
+
+            if (c == 0){
+                c = 1;
+            }
+            else{
+                c = 0;
+            }
+        }
     }
+
 }
