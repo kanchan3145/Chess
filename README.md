@@ -2,16 +2,16 @@ package piece;
 
 import main.GamePanel;
 
-public class Knight extends Piece{
+public class Queen extends Piece{
 
-    public Knight(int color, int col, int row){
+    public Queen(int color, int col, int row){
         super(color, col, row);
 
         if (color == GamePanel.WHITE){
-            image = getImage("/piece/w-knight");
+            image = getImage("/piece/e-queen");
         }
         else{
-            image = getImage("/piece/b-knight");
+            image = getImage("/piece/b-queen");
         }
     }
 }
